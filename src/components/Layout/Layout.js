@@ -111,6 +111,14 @@ export default function Layout({ children }) {
       title = CurrentPage
       break
   }
+  //
+  //  Add server
+  //
+  const StaticData = snapShot.v_StaticData
+  const server = snapShot.v_Server
+  StaticData === true
+    ? (title = title + ` (Server:StaticData)`)
+    : (title = title + ` (Server:${server})`)
   //...................................................................................
   //.  Render the component
   //...................................................................................

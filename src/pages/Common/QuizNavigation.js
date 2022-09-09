@@ -12,10 +12,6 @@ import HelpIcon from '@mui/icons-material/Help'
 import SettingsApplicationsIcon from '@mui/icons-material/SettingsApplications'
 import MenuBookIcon from '@mui/icons-material/MenuBook'
 //
-//  Libraries
-//
-import { useSnapshot } from 'valtio'
-//
 //  Debug Settings
 //
 import debugSettings from '../../debug/debugSettings'
@@ -24,8 +20,9 @@ import debugSettings from '../../debug/debugSettings'
 //
 import MyActionButton from '../../components/controls/MyActionButton'
 //
-//  Utilities
+//  Valtio Store
 //
+import { useSnapshot } from 'valtio'
 import { ValtioStore } from '../../pages/ValtioStore'
 //
 //  Style overrides

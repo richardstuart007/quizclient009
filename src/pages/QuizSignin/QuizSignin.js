@@ -21,6 +21,7 @@ import QuizInfo from '../Common/QuizInfo'
 //
 //  Utilities
 //
+import { useSnapshot } from 'valtio'
 import { ValtioStore } from '../ValtioStore'
 //..............................................................................
 //.  Initialisation
@@ -28,7 +29,6 @@ import { ValtioStore } from '../ValtioStore'
 //
 // Constants
 //
-const { URL_BASE } = require('../../services/constants.js')
 const { URL_SIGNIN } = require('../../services/constants.js')
 const sqlClient = 'Quiz/Signin'
 //
@@ -56,7 +56,12 @@ const validationSchema = Yup.object({
 //===================================================================================
 function QuizSignin() {
   if (g_log1) console.log('Start QuizSignin')
-  const CurrentPage = 'QuizRegister'
+  const CurrentPage = 'QuizSignin'
+  //
+  //  Define the ValtioStore
+  //
+  const snapShot = useSnapshot(ValtioStore)
+  const URL_BASE = snapShot.v_URL
   //
   // Form Message
   //

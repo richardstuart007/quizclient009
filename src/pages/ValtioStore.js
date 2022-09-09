@@ -2,6 +2,12 @@ import { proxy } from 'valtio'
 
 const ValtioStore = proxy({
   //
+  //  Server
+  //
+  v_URL: '',
+  v_Server: '',
+  v_StaticData: true,
+  //
   // Settings
   //
   v_HideParams: false,
@@ -20,10 +26,6 @@ const ValtioStore = proxy({
   v_ShowAllGroup1: false,
   v_ShowSelectionGroup2: false,
   v_ShowSelectionGroup3: false,
-  //
-  //  Static data or Server Data
-  //
-  v_StaticData: true,
   //
   //  Navigation State Variables
   //

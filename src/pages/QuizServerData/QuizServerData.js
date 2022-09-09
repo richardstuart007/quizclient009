@@ -2,7 +2,7 @@
 //  Libraries
 //
 import { useEffect, useState } from 'react'
-import { useSnapshot } from 'valtio'
+
 import {
   Container,
   Typography,
@@ -26,8 +26,9 @@ import useMyTable from '../../components/controls/useMyTable'
 //
 import QuizInfo from '../Common/QuizInfo'
 //
-//  Utilities
+//  Valtio
 //
+import { useSnapshot } from 'valtio'
 import { ValtioStore } from '../ValtioStore'
 //
 //  Services
@@ -129,6 +130,7 @@ const QuizServerData = () => {
   //
   const snapShot = useSnapshot(ValtioStore)
   const CurrentPage = snapShot.v_Page
+  const URL_BASE = snapShot.v_URL
 
   const filterFn = {
     fn: items => {
@@ -156,6 +158,7 @@ const QuizServerData = () => {
     //
     const getTableparams = {
       sqlCaller: functionName,
+      sqlURL: URL_BASE,
       sqlTable: 'owner',
       sqlAction: 'SELECT',
       sqlWhere: '',
@@ -240,6 +243,7 @@ const QuizServerData = () => {
     //
     const getTableparams = {
       sqlCaller: functionName,
+      sqlURL: URL_BASE,
       sqlTable: 'questions',
       sqlAction: 'SELECT',
       sqlWhere: '',
@@ -323,6 +327,7 @@ const QuizServerData = () => {
     //
     const getTableparams = {
       sqlCaller: functionName,
+      sqlURL: URL_BASE,
       sqlTable: 'bidding',
       sqlAction: 'SELECT',
       sqlWhere: '',
@@ -407,6 +412,7 @@ const QuizServerData = () => {
     //
     const getTableparams = {
       sqlCaller: functionName,
+      sqlURL: URL_BASE,
       sqlTable: 'hands',
       sqlAction: 'SELECT',
       sqlWhere: '',
@@ -492,6 +498,7 @@ const QuizServerData = () => {
     //
     const getTableparams = {
       sqlCaller: functionName,
+      sqlURL: URL_BASE,
       sqlTable: 'reflinks',
       sqlAction: 'SELECT',
       sqlWhere: '',
@@ -577,6 +584,7 @@ const QuizServerData = () => {
     //
     const getTableparams = {
       sqlCaller: functionName,
+      sqlURL: URL_BASE,
       sqlAction: 'SELECTSQL',
       sqlString:
         'qowner, qgroup1, g1title from questions join group1 on qgroup1 = g1id group by qowner, qgroup1 ,g1title order by qowner, qgroup1'
@@ -656,6 +664,7 @@ const QuizServerData = () => {
     //
     const getTableparams = {
       sqlCaller: functionName,
+      sqlURL: URL_BASE,
       sqlTable: 'group2',
       sqlAction: 'SELECT',
       sqlWhere: '',
@@ -737,6 +746,7 @@ const QuizServerData = () => {
     //
     const getTableparams = {
       sqlCaller: functionName,
+      sqlURL: URL_BASE,
       sqlTable: 'group3',
       sqlAction: 'SELECT',
       sqlWhere: '',
