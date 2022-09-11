@@ -39,18 +39,13 @@ function App() {
   //
   //  Update Valtio store with URL and Server Name
   //
-  let port
+  let port = 9003
   const windowport = window.location.port
-  console.log(windowport)
-
-  console.log(process.env)
-  const envPort = process.env.REACT_APP_PORT
-  console.log(envPort)
-
   if (windowport) port = windowport
-  if (envPort) port = envPort
-  console.log(port)
-
+  console.log(`port(${port})`)
+  //
+  //  Update Valtio store with URL and Server Name - REMOTE
+  //
   if (port === '9003') {
     ValtioStore.v_Server = SERVER_REMOTE
     ValtioStore.v_URL = URL_REMOTE
@@ -59,7 +54,7 @@ function App() {
     )
   }
   //
-  //  Update Valtio store with URL and Server Name - LOCAL
+  //  Update Valtio store with URL and Server Name - LOCAL-->REMOTE
   //
   if (port === '9013') {
     ValtioStore.v_Server = SERVER_LOCAL_REMOTE
