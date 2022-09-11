@@ -39,7 +39,7 @@ function App() {
   //
   //  Update Valtio store with URL and Server Name
   //
-  let port = 9003
+  let port = '9003'
   const windowport = window.location.port
   if (windowport) port = windowport
   console.log(`port(${port})`)
