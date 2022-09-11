@@ -23,7 +23,8 @@
   },
   "scripts": {
     "start": "set PORT=9003 && react-scripts start",
-    "startrailway": "set PORT=9003 && react-scripts start",
+    "startremote": "set PORT=9003 && react-scripts start",
+    "startlocalremote": "set PORT=9013 && react-scripts start",
     "startlocal": "set PORT=8003 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

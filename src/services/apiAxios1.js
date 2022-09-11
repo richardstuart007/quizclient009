@@ -6,16 +6,12 @@ import axios from 'axios'
 //  Debug Settings
 //
 import debugSettings from '../debug/debugSettings'
-//.............................................................................
-//.  Initialisation
-//.............................................................................
 //
 // Debug Settings
 //
 const g_log1 = debugSettings()
-//===================================================================================
 //
-// methods - post(get), post(update), delete(delete), put(upsert)
+// methods - post(get), post(update), delete(delete), post(upsert)
 //
 const apiAxios = async (method, url, data) => {
   try {

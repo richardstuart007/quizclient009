@@ -17,7 +17,7 @@ const { URL_TABLES } = require('./constants.js')
 //
 // Debug Settings
 //
-const g_log1 = debugSettings()
+const g_log1 = debugSettings(true)
 //===================================================================================
 async function getTable(props) {
   if (g_log1) console.log('Start getTable')
@@ -51,6 +51,7 @@ async function getTable(props) {
           })
         : (body = {
             sqlClient: sqlClient,
+            sqlTable: sqlTable,
             sqlAction: sqlAction,
             sqlString: sqlString
           })

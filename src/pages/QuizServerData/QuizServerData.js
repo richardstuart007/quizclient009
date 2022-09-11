@@ -76,7 +76,7 @@ const g_PromiseTotal = records.length
 //
 // Debug Settings
 //
-const debugLog = debugSettings()
+const debugLog = debugSettings(true)
 const debugFunStartSetting = false
 const debugFunEndSetting = false
 const debugModule = 'QuizServerData'
@@ -131,6 +131,7 @@ const QuizServerData = () => {
   const snapShot = useSnapshot(ValtioStore)
   const CurrentPage = snapShot.v_Page
   const URL_BASE = snapShot.v_URL
+  debugLogging('URL_BASE', URL_BASE)
 
   const filterFn = {
     fn: items => {
@@ -585,6 +586,7 @@ const QuizServerData = () => {
     const getTableparams = {
       sqlCaller: functionName,
       sqlURL: URL_BASE,
+      sqlTable: 'group1',
       sqlAction: 'SELECTSQL',
       sqlString:
         'qowner, qgroup1, g1title from questions join group1 on qgroup1 = g1id group by qowner, qgroup1 ,g1title order by qowner, qgroup1'
@@ -820,11 +822,11 @@ const QuizServerData = () => {
     debugLogging('LoadOptions start ')
     g_PromiseCount = 0
 
-    LoadServerQuestions(0)
-    LoadServerBidding(1)
-    LoadServerHands(2)
-    LoadServerReflinks(3)
-    LoadServerOwner(4)
+    LoadServerOwner(0)
+    LoadServerQuestions(1)
+    LoadServerBidding(2)
+    LoadServerHands(3)
+    LoadServerReflinks(4)
     LoadServerGroup1Owner(5)
     LoadServerGroup2(6)
     LoadServerGroup3(7)
